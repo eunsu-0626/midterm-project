@@ -1,5 +1,5 @@
 ﻿#include <bangtal.h>
-#include <stdlib.h>
+#include <stdio.h>
 
 SceneID scene, scene1;
 // step1. 슈퍼마리오
@@ -81,6 +81,7 @@ void endGame(bool success) {
 }
 
 
+
 void timerCallback(TimerID timer)
 {
 	x += dx; y += dy;
@@ -107,45 +108,54 @@ void timerCallback(TimerID timer)
 	if (x > 960 && x < 1045 && y > 350 && y < 710) {
 		endGame(false);
 	}
-	else if (x > 1130 && x < 1168 && y > 349 && y < 389) {
+	else if (x > 1117 && x < 1148 && y > 300 && y < 365) {
 		endGame(true);
 	}
 
 	// 코인 
 	if (x > 260 && x < 290 && y > 442 && y < 515) {
 		hideObject(coin1);
+	
 	}
 
 	if (x > 348 && x < 380 && y > 494 && y < 565) {
 		hideObject(coin2);
+		
 	}
 
 	if (x > 420 && x < 470 && y > 462 && y < 515) {
 		hideObject(coin3);
+		
 	}
 
 	if (x > 580 && x < 628 && y > 670 && y < 753) {
 		hideObject(coin4);
+	
 	}
 
 	if (x > 606 && x < 709 && y > 745 && y < 810) {
 		hideObject(coin5);
+		
 	}
 
 	if (x > 750 && x < 794 && y > 670 && y < 753) {
 		hideObject(coin6);
+		
 	}
 
 	if (x > 862 && x < 905 && y > 310 && y < 389) {
 		hideObject(coin7);
+
 	}
 
 	if (x > 1030 && x < 1080 && y > 760 && y < 829) {
 		hideObject(coin8);
+	
 	}
 
 	if (x > 1130 && x < 1168 && y > 349 && y < 389) {
 		hideObject(coin9);
+		
 	}
 	setTimer(timer, ANIMATION_TIME);
 	startTimer(timer);
@@ -166,60 +176,77 @@ void timerCallback(TimerID timer)
 	if (x > 540 && x < 607 && y > 120 && y < 159) {  // 독버섯
 		stopTimer(timer1);
 		hideObject(mush4);
+		
 	}
 
 	if (x > 580 && x < 675 && y > 560 && y < 596) {
 		stopTimer(timer1);
 		hideObject(mush5);
+		
 	}
 
 	if (x > 240 && x < 306 && y > 250 && y < 320) {
 		stopTimer(timer1);
 		hideObject(mush6);
+		
 	}
 
 	if (x > 1045 && x < 1105 && y > 357 && y < 400) {
 		stopTimer(timer1);
 		hideObject(mush7);
+		
 	}
 
-	if (x > 840 && x < 905 && y > 357 && y < 400) {
+	if (x > 840 && x < 905 && y > 343 && y < 400) {
 		hideObject(mush8);
 	}
 
 	if (x < 28 && y > 470 && y < 508) {
 		stopTimer(timer1);
 		hideObject(mush9);
+		
 	}
 
 	// 주차 완료
 	if (x > 940 && x < 1100 && y > 620 && y < 650) {
 		stopTimer(timer1);
+		
 
 	}
 
-	if (x > 948 && x < 1100 && y > 410 && y < 460) {
+	if (x > 970 && x < 1100 && y > 410 && y < 450) {
 		stopTimer(timer1);
+		
 
 	}
 
 	if (x > 1087 && x < 1140 && y > 520 && y < 539) {
 		stopTimer(timer1);
+		
 
 	}
 
 	// 잔디 통행 금지
 	if (x > 840 && x < 1080 && y > 65 && y < 200) {     // 오른쪽 아래 잔디 통행 금지
 		stopTimer(timer1);
+		
 	}
 
 	if (x > 420 && x < 770 && y > 120 && y < 270) {     // 왼쪽 아래 잔디 통행 금지
 		stopTimer(timer1);
+		
 	}
 
 	if (x > 730 && x < 920 && y > 420) {
 		stopTimer(timer1);
+		
 	}
+
+
+	
+
+
+
 
 }
 
@@ -346,8 +373,8 @@ int main()
 	showObject(mush6);
 
 	mush7 = createObject("독버섯4.png");
-	locateObject(mush7, scene1, 1100, 387);
-	showObject(mush7);
+	locateObject(mush7, scene1, 1110, 387);
+	showObject(mush7); 
 
 	mush8 = createObject("버섯4.png");
 	locateObject(mush8, scene1, 900, 387);
@@ -376,6 +403,7 @@ int main()
 	mariologo1 = createObject("슈퍼마리오1.png");
 	locateObject(mariologo1, scene1, 300, 800);
 	showObject(mariologo1);
+
 
 
 
